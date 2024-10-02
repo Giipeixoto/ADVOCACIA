@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabrina Peixoto Advocacia e Consultoria Jurídica</title>
+  <!-- Link para o Bootstrap (CSS e JavaScript) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos CSS personalizados -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .advogada-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .social-icons {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .social-icons li {
+      margin-right: 10px;
+    }
+    .social-icon {
+      color: #fff;
+      font-size: 20px;
+    }
+    .contact-info {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Serviços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seção de boas-vindas -->
+  <section class="welcome-section text-center">
+    <div class="container">
+      <h1>Bem-vindo ao nosso Escritório</h1>
+      <p>Conheça nossos serviços especializados em Direito Cível, Criminal, Família, Tributário, Concursos, Consumidor.</p>
+    </div>
+  </section>
+
+  <!-- Seção da advogada -->
+  <section class="advogada-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 order-md-2">
+          <div class="advogada-image text-center">
+            <img src="lawyer-image.jpg" alt="Imagem da Advogada Sabrina Peixoto" class="img-fluid rounded-circle">
+          </div>
+        </div>
+        <div class="col-md-6 order-md-1">
+          <div class="advogada-content text-center text-md-left">
+            <h2 class="mb-4">Apresentação da Advogada</h2>
+            <p class="lead">
+              <i class="fas fa-quote-left"></i>
+              SABRINA PEIXOTO
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <p class="advogada-description">
+              <strong>Missão & Valores</strong><br>
+              Construir relação de parceria, confiança e credibilidade com nossos clientes, atuando com ética, transparência e responsabilidade.
+              <br><br>
+              <strong>Sobre</strong><br>
+              O escritório foi criado visando possibilitar levar um serviço de excelência para todos os cantos do Brasil e do mundo, sempre primando pelo interesse do cliente. Um dos pilares que baseiam a atuação é justamente o contato direto com o cliente, possibilitando a criação de uma relação de confiança.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de serviços -->
+  <section class="servicos-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="servico" data-title="Direito Cível" data-description="Questões relacionadas aos direitos e obrigações das pessoas físicas e jurídicas nas relações cotidianas."></div>
+        </div>
+        <div class="col-md-4">
+          <div class="servico" data-title="Direito Criminal" data-description="Normas que definem os crimes e suas punições, incluindo defesa de acusados."></div>
+        </div>
+        <div class="col-md-4">
+          <div class="servico" data-title="Direito da Família" data-description="Regula as relações familiares, como casamento, divórcio e guarda de filhos."></div>
+        </div>
+        <div class="col-md-4">
+            <div class="servico" data-title="Direito Tributário" data-description="Normas que regem a relação entre o Estado e os contribuintes.">
+            </div>
+          </div>          
+        <div class="col-md-4">
+          <div class="servico" data-title="Direito do Consumidor" data-description="Protege os direitos dos consumidores em relação aos produtos e serviços."></div>
+        </div>
+        <div class="col-md-4">
+          <div class="servico" data-title="Direito Administrativo"data-description="Regula a atividade administrativa do Estado e a atuação dos agentes públicos."></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 text-center text-md-right">
+          <p>&copy; 2024 Escritório de Advocacia. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts JavaScript -->
+  <!-- jQuery (necessário para Bootstrap JS) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap JS (popper.js incluído) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts personalizados -->
+  <script src="scripts.js"></script>
+</body>
+</html>

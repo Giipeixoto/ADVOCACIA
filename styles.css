@@ -1,0 +1,164 @@
+/* PÁGINA INDEX */
+
+/* Estilos para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para a seção de boas-vindas */
+.welcome-section {
+    background-color: #002147; /* Azul mais fechado */
+    padding: 100px 0;
+    text-align: center; /* Centraliza texto na seção */
+}
+
+.welcome-section h1 {
+    font-size: 2.5em; /* Aumenta tamanho da fonte */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.welcome-section p {
+    font-size: 1.25em; /* Aumenta tamanho da fonte */
+    margin-bottom: 40px;
+    color: #d3d3d3;
+}
+
+.welcome-section .btn-primary,
+.welcome-section .btn-outline-primary {
+    margin: 0 10px;
+}
+
+/* Estilos para a seção da advogada */
+.advogada-section {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.advogada-section h2 {
+    font-size: 2.5em; /* Aumenta tamanho da fonte */
+    color: #002147;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza título */
+}
+
+.advogada-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.advogada-image img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.advogada-description {
+    font-size: 1.125em; /* Aumenta tamanho da fonte */
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilo para a seção de serviços */
+.servicos-section {
+    background-color: #002147; /* Azul mais fechado */
+    padding: 50px 0;
+}
+
+/* Estilo para cada bloco de serviço */
+.servico {
+    background-color: #fff; /* Fundo branco */
+    color: #002147; /* Azul mais fechado */
+    text-align: center;
+    padding: 100px 50px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilo para o título do serviço */
+.servico::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #002147; /* Azul mais fechado */
+    font-size: 30px; 
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo para a descrição do serviço */
+.servico::after {
+    content: attr(data-description);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #002147; /* Azul mais fechado */
+    font-size: 15px;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o bloco de serviço */
+.servico:hover {
+    background-color: #d3d3d3; /* Cinza claro */
+    transform: translateY(-5px); /* Eleva o bloco ao passar o mouse */
+}
+
+.servico:hover::before {
+    opacity: 0; /* Torna o título invisível */
+}
+
+.servico:hover::after {
+    opacity: 1; /* Torna a descrição visível */
+}
+
+/* Ajustes no texto da navbar */
+.navbar-brand, .nav-link {
+    color: #d3d3d3 !important; /* Cinza claro */
+}
+
+/* Ajustes no rodapé */
+footer {
+    background-color: #002147; /* Azul mais fechado */
+    color: #d3d3d3; /* Cinza claro */
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center; /* Centraliza texto no rodapé */
+}
+
+/* Estilos para botões */
+.btn-primary {
+    background-color: #002147;
+    border-color: #002147;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #00122b;
+    border-color: #00122b;
+}
+
+.btn-outline-primary {
+    background-color: #002147;
+    border-color: #002147;
+    color: #fff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #00122b;
+    border-color: #00122b;
+}
+
