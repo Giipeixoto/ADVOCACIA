@@ -53,7 +53,7 @@ Advocacia-SP/
 
 ## 📱 Links Úteis
 
-* GitHub Pages - (https://giipeixoto.github.io/ADVOCACIA/)
+* GitHub Pages - https://giipeixoto.github.io/ADVOCACIA/
 * Bootstrap - Framework CSS utilizado. 
 * Font Awesome - Biblioteca de ícones.
 
