@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Advogado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="minhaconta.html">Minha Conta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.html">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <main>
+        <section class="card">
+            <h2>Meus Casos</h2>
+            <ul id="casosAdvogado">
+                <!-- Casos do advogado serão listados aqui -->
+            </ul>
+        </section>
+
+        <section class="card">
+            <h3>Mensagens Pendentes</h3>
+            <ul id="mensagensPendentes">
+                <!-- Mensagens pendentes serão listadas aqui -->
+            </ul>
+        </section>
+
+        <section class="card">
+            <h3>Atividades Recentes</h3>
+            <ul id="atividadesRecentes">
+                <!-- Atividades do advogado serão listadas aqui -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
