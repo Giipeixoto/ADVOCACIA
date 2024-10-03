@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Sabrina Peixoto Advocacia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="minhaconta.html">Minha Conta</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.html">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da Página Minha Conta -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="mb-4">Minha Conta</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Coluna de Informações do Usuário -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="user-avatar.jpg" alt="Foto do usuário" class="img-fluid rounded-circle mb-3" style="width: 150px;">
+                        <h5 class="card-title" id="userName">Nome do Usuário</h5>
+                        <p class="card-text" id="userEmail"><i class="fas fa-envelope"></i> user@exemplo.com</p>
+                        <p class="card-text" id="userPhone"><i class="fas fa-phone"></i> (00) 0000-0000</p>
+                        <p class="card-text"><i class="fas fa-check-circle"></i> Status: Cliente Ativo</p>
+                        <button class="btn btn-outline-primary btn-block" id="edit-profile" data-toggle="modal" data-target="#editProfileModal"><i class="fas fa-edit"></i> Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna com Chamados e Histórico -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header">Chamados Abertos</div>
+                    <div class="card-body">
+                        <ul class="list-group" id="open-cases">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Processo #12345 - Direito Civil
+                                <span class="badge badge-warning badge-pill">Em Andamento</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Consulta #54321 - Direito Tributário
+                                <span class="badge badge-info badge-pill">Aguardando Resposta</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Ação #67890 - Direito Criminal
+                                <span class="badge badge-success badge-pill">Finalizado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Atividades Recentes</div>
+                    <div class="card-body">
+                        <ul class="list-group" id="recent-activities">
+                            <li class="list-group-item">Consulta agendada com Dra. Sabrina em <strong>01/10/2024</strong></li>
+                            <li class="list-group-item">Atualização no processo #12345 - Em Andamento</li>
+                            <li class="list-group-item">Consulta realizada com Dra. Sabrina em <strong>25/09/2024</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+<!-- Gráfico de Progresso dos Casos -->
+<div class="card mb-4">
+    <div class="card-header">Progresso dos Casos</div>
+    <div class="card-body">
+        <canvas id="case-progress-chart" style="height: 200px;"></canvas>
+    </div>
+</div>
+
+<!-- Gráfico de Mensagens Pendentes -->
+<div class="card mb-4">
+    <div class="card-header">Mensagens Pendentes</div>
+    <div class="card-body">
+        <canvas id="pending-messages-chart" style="height: 200px;"></canvas>
+    </div>
+</div>
+
+
+    <!-- Modal para Edição de Perfil -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="inputName">Nome</label>
+                            <input type="text" class="form-control" id="inputName" value="Nome do Usuário" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" value="user@exemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhone">Telefone</label>
+                            <input type="text" class="form-control" id="inputPhone" value="(00) 0000-0000" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="saveProfile">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script> <!-- Link para o seu arquivo scripts.js -->
+</body>
+</html>

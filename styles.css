@@ -221,10 +221,6 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  button[type="submit"]:hover {
-    background-color: #00122b; /* Azul ainda mais fechado */
-  }
-  
   /* Ajustes no rodapé */
   footer {
     background-color: #002147; /* Azul mais fechado */
@@ -298,3 +294,212 @@ body {
   .area-item:hover .area-description {
     display: block; /* Mostra ao passar o mouse */
   }
+/* --- VARIÁVEIS CSS --- */
+:root {
+    --cor-primaria: #002147; /* Azul mais fechado */
+    --cor-secundaria: #d3d3d3; /* Cinza claro */
+    --cor-fundo: #f8f9fa; /* Fundo cinza claro */
+}
+
+/* --- ESTILOS GLOBAIS --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- SEÇÃO DE BOAS-VINDAS --- */
+.welcome-section {
+    background-color: var(--cor-primaria);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* --- SEÇÃO DE SERVIÇOS --- */
+.servicos-section {
+    background-color: var(--cor-primaria);
+    padding: 50px 0;
+}
+
+.servico {
+    background-color: #fff;
+    color: var(--cor-primaria);
+    padding: 100px 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* --- NAVEGAÇÃO --- */
+.navbar {
+    background-color: #002147; /* Azul mais fechado */
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: #d3d3d3 !important;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.navbar .btn {
+    background-color: #fff;
+    color: #002147;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .btn:hover {
+    background-color: #d3d3d3;
+}
+
+/* --- PÁGINA DE CONTATO --- */
+.contato-section {
+    padding: 50px 0;
+    background-color: #fff; /* Fundo branco */
+}
+
+.contato-section h2 {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contato-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* --- PÁGINA DE BLOG --- */
+.blog-section {
+    padding: 50px 0;
+    background-color: #f8f9fa; /* Fundo cinza claro */
+}
+
+.blog-title {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.blog-post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* --- PÁGINA DE TESTEMUNHOS --- */
+.testemunhos-section {
+    padding: 50px 0;
+    background-color: #fff; /* Fundo branco */
+}
+
+.testemunhos-title {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testemunhos-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #f8f9fa; /* Fundo cinza claro */
+}
+
+/* Estilo para a página Minha Conta */
+.container {
+    margin-top: 50px;
+}
+
+h2 {
+    color: #002147;
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.btn-outline-primary {
+    color: #ffffff;
+    border-color: #002147;
+}
+
+.btn-outline-primary:hover {
+    background-color: #002147;
+    color: #fff;
+}
+
+.img-fluid {
+    border: 3px solid #002147;
+    padding: 5px;
+}
+
+ul.list-group {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.list-group-item {
+    background-color: #f9f9f9;
+}
+
+.card-header {
+    background-color: #002147;
+    color: white;
+    font-weight: bold;
+}
+
+.badge-pill {
+    font-size: 0.9rem;
+}
+
+.list-group-item strong {
+    color: #002147;
+}
