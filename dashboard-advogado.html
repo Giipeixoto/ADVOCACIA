@@ -4,56 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do Advogado</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contato.html">Contato</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="minhaconta.html">Minha Conta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout.html">Sair</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="minhaconta.html">Minha Conta</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard-advogado.html">Dashboard Advogado</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard-client.html">Dashboard Cliente</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.html">Sair</a></li>
+            </ul>
         </div>
-      </nav>
+    </nav>
 
-    <main>
+    <main class="container mt-4">
+        <h1>Painel do Advogado</h1>
+        
         <section class="card">
-            <h2>Meus Casos</h2>
-            <ul id="casosAdvogado">
-                <!-- Casos do advogado serão listados aqui -->
-            </ul>
+            <div class="card-body">
+                <h2 class="card-title">Meus Casos</h2>
+                <ul id="casosAdvogado" class="list-group">
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Cliente:</strong> João Silva <br>
+                            <strong>Tipo de Caso:</strong> Direito Civil <br>
+                            <strong>Status:</strong> Em andamento
+                        </div>
+                        <button class="btn btn-info btn-sm" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Cliente:</strong> Maria Oliveira <br>
+                            <strong>Tipo de Caso:</strong> Direito Penal <br>
+                            <strong>Status:</strong> Finalizado
+                        </div>
+                        <button class="btn btn-info btn-sm" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Cliente:</strong> Ana Costa <br>
+                            <strong>Tipo de Caso:</strong> Direito da Família <br>
+                            <strong>Status:</strong> Em andamento
+                        </div>
+                        <button class="btn btn-info btn-sm" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="card">
-            <h3>Mensagens Pendentes</h3>
-            <ul id="mensagensPendentes">
-                <!-- Mensagens pendentes serão listadas aqui -->
-            </ul>
+            <div class="card-body">
+                <h3 class="card-title">Mensagens Pendentes</h3>
+                <ul id="mensagensPendentes" class="list-group">
+                    <li class="list-group-item">
+                        <div>
+                            <strong>De:</strong> Cliente - João Silva <br>
+                            <strong>Mensagem:</strong> "Quais são os próximos passos do meu caso?"
+                        </div>
+                        <button class="btn btn-warning btn-sm" title="Responder"><i class="fas fa-reply"></i></button>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>De:</strong> Cliente - Ana Costa <br>
+                            <strong>Mensagem:</strong> "Preciso de uma atualização sobre o processo."
+                        </div>
+                        <button class="btn btn-warning btn-sm" title="Responder"><i class="fas fa-reply"></i></button>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="card">
-            <h3>Atividades Recentes</h3>
-            <ul id="atividadesRecentes">
-                <!-- Atividades do advogado serão listadas aqui -->
-            </ul>
+            <div class="card-body">
+                <h3 class="card-title">Atividades Recentes</h3>
+                <ul id="atividadesRecentes" class="list-group">
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Data:</strong> 03/10/2024 <br>
+                            <strong>Atividade:</strong> Reunião com o cliente João Silva
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Data:</strong> 02/10/2024 <br>
+                            <strong>Atividade:</strong> Envio de documentos para o caso de Maria Oliveira
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Data:</strong> 01/10/2024 <br>
+                            <strong>Atividade:</strong> Consulta sobre o processo de Ana Costa
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
+
+        <!-- Adicionando os elementos canvas para gráficos -->
+        <section class="card">
+          <div class="card-body">
+              <h3 class="card-title">Gráficos</h3>
+              <canvas id="graficoCasos" style="height: 200px;"></canvas>
+              <canvas id="graficoMensagens" style="height: 200px;"></canvas>
+          </div>
+      </section>      
     </main>
 
+    <!-- Modal para Detalhes do Caso -->
+    <div class="modal fade" id="detalhesModal" tabindex="-1" role="dialog" aria-labelledby="detalhesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalhesModalLabel">Detalhes do Caso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Detalhes do caso serão injetados aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal para Responder Mensagem -->
+<div class="modal fade" id="responderModal" tabindex="-1" role="dialog" aria-labelledby="responderModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="responderModalLabel">Responder Mensagem</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p id="modalMensagem"></p>
+              <textarea class="form-control" id="campoResposta" rows="4" placeholder="Digite sua resposta aqui..." required></textarea>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" id="enviarResposta" class="btn btn-primary">Enviar Resposta</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Seção para Mostrar Respostas -->
+<section class="card mt-3">
+    <div class="card-body">
+        <h3 class="card-title">Respostas Enviadas</h3>
+        <ul id="respostasEnviadas" class="list-group">
+            <!-- As respostas enviadas serão adicionadas aqui -->
+        </ul>
+    </div>
+</section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

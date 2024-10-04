@@ -1,58 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do Cliente</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contato.html">Contato</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="minhaconta.html">Minha Conta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout.html">Sair</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="minhaconta.html">Minha Conta</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard-advogado.html">Dashboard Advogado</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard-client.html">Dashboard Cliente</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.html">Sair</a></li>
+            </ul>
         </div>
-      </nav>
+    </nav>
 
-    <main>
-        <section>
-            <h2>Meus Casos</h2>
-            <ul id="casosCliente">
-                <!-- Casos do cliente serão listados aqui -->
-            </ul>
-        </section>
-        <section>
-            <h3>Solicitar Nova Consulta</h3>
-            <form id="formSolicitarConsulta">
-                <input type="text" placeholder="Descrição do caso" required>
-                <button type="submit">Solicitar</button>
-            </form>
-        </section>
-        <section>
-            <h3>Mensagens</h3>
-            <ul id="historicoMensagens">
-                <!-- Histórico de mensagens será listado aqui -->
-            </ul>
-        </section>
-    </main>
+    <main class="container mt-4">
+      
+      <section class="card">
+        <div class="card-body">
+        <h2>Meus Casos</h2>
+        <ul id="casosCliente" class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Caso 1: Descrição do Caso
+                <button class="btn btn-info btn-sm" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Caso 2: Descrição do Caso
+                <button class="btn btn-info btn-sm" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+            </li>
+        </ul>
+    </section>
+    
+      <!-- Modal para Detalhes do Caso -->
+      <div class="modal fade" id="detalhesModal" tabindex="-1" role="dialog" aria-labelledby="detalhesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalhesModalLabel">Detalhes do Caso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Detalhes do caso serão injetados aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <section class="card">
+      <div class="card-body">
+          <h3>Mensagens</h3>
+          <ul id="historicoMensagens" class="list-group">
+              <!-- Histórico de mensagens será listado aqui -->
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Atualização de Caso 1: O processo está em andamento.
+                <button class="btn btn-warning btn-sm" title="Responder"><i class="fas fa-reply"></i></button>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Atualização de Caso 2: A audiência foi marcada para 15/10
+                <button class="btn btn-warning btn-sm" title="Responder"><i class="fas fa-reply"></i></button>
+              </li>
+          </ul>
+      </section>
+
+      <!-- Modal para responder mensagens -->
+    <div class="modal fade" id="responderModal" tabindex="-1" role="dialog" aria-labelledby="responderModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="responderModalLabel">Responder Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMensagem"></p>
+                <textarea class="form-control" id="campoResposta" rows="4"
+                    placeholder="Digite sua resposta aqui..." required></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="enviarResposta" class="btn btn-primary">Enviar Resposta</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="card">
+  <div class="card-body">
+      <h3>Solicitar Nova Consulta</h3>
+      <form id="formSolicitarConsulta" class="form-row">
+          <div class="col">
+              <input type="text" class="form-control" placeholder="Descrição do caso" required>
+          </div>
+          <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Solicitar</button>
+          </div>
+      </form>
+  </div>
+</section>
+
+    <!-- jQuery (necessário para Bootstrap JS) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS (popper.js incluído) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts personalizados -->
     <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
+
 </html>

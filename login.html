@@ -8,14 +8,21 @@
 </head>
 <body>
   <h1>Login</h1>
-  <form id="loginForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" required><br><br>
+  <form id="loginForm" action="/auth/login" method="POST">
+    <div>
+      <label for="identifier">Email ou CPF/CNPJ:</label>
+      <input type="text" id="identifier" name="identifier" 
+             placeholder="Digite seu Email ou CPF/CNPJ" maxlength="255" required>
+    </div>
+    
+    <div>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" 
+             placeholder="Digite sua Senha" minlength="8" maxlength="8" required>
+    </div>
+    
     <button type="submit" class="btn btn-primary">Login</button>
     <a href="index.html" class="btn btn-secondary">Voltar</a>
-    
   </form>
 
   <footer class="bg-dark text-white text-center py-3">

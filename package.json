@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.4",
+    "popper.js": "^1.16.1"
+  }
+}
