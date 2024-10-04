@@ -314,37 +314,20 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    // Função para abrir o modal de responder mensagem
-    $('#mensagensPendentes').on('click', '.btn-warning', function() {
-        const mensagemIndex = $(this).closest('li').index();
-        const mensagens = [
-            {
-                de: "Cliente - João Silva",
-                texto: "Quais são os próximos passos do meu caso?",
-            },
-            {
-                de: "Cliente - Ana Costa",
-                texto: "Preciso de uma atualização sobre o processo.",
-            }
-        ];
-
-        $('#modalMensagem').html(`De: ${mensagens[mensagemIndex].de}<br>Mensagem: "${mensagens[mensagemIndex].texto}"`);
-        $('#responderModal').modal('show');
-    });
-
-    // Função para enviar a resposta
-    $('#enviarResposta').click(function() {
-        const resposta = $('#campoResposta').val(); // Captura o texto da resposta
-        const mensagemDe = $('#modalMensagem').text(); // Captura a mensagem de quem enviou
-
-        if (resposta.trim() !== '') { // Verifica se o campo de resposta não está vazio
-            // Adiciona a resposta à lista de respostas enviadas
-            $('#respostasEnviadas').append(`<li class="list-group-item"><strong>${mensagemDe}</strong><br>${resposta}</li>`);
-            $('#campoResposta').val(''); // Limpa o campo de resposta
-            $('#responderModal').modal('hide'); // Fecha o modal
-        } else {
-            alert("Por favor, digite uma resposta antes de enviar."); // Alerta se o campo estiver vazio
+// Função para abrir o modal de responder mensagem
+$('#mensagensPendentes .btn-warning').click(function() {
+    const mensagemIndex = $(this).closest('li').index();
+    const mensagens = [
+        {
+            de: "Cliente - João Silva",
+            texto: "Quais são os próximos passos do meu caso?",
+        },
+        {
+            de: "Cliente - Ana Costa",
+            texto: "Preciso de uma atualização sobre o processo.",
         }
-    });
+    ];
+
+    $('#modalBodyResposta').html(`De: ${mensagens[mensagemIndex].de}<br>Mensagem: ${mensagens[mensagemIndex].texto}`);
+    $('#responderModal').modal('show');
 });
