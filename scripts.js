@@ -314,20 +314,74 @@ $(document).ready(function() {
     });
 });
 
-// Função para abrir o modal de responder mensagem
+// Função para abrir o modal de responder mensagem no dashboard de mensagens pendentes (dashboard anterior)
 $('#mensagensPendentes .btn-warning').click(function() {
     const mensagemIndex = $(this).closest('li').index();
+    
     const mensagens = [
         {
             de: "Cliente - João Silva",
-            texto: "Quais são os próximos passos do meu caso?",
+            texto: "Quais são os próximos passos do meu caso?"
         },
         {
             de: "Cliente - Ana Costa",
-            texto: "Preciso de uma atualização sobre o processo.",
+            texto: "Preciso de uma atualização sobre o processo."
         }
     ];
 
     $('#modalBodyResposta').html(`De: ${mensagens[mensagemIndex].de}<br>Mensagem: ${mensagens[mensagemIndex].texto}`);
     $('#responderModal').modal('show');
+});
+
+// Função para abrir o modal de responder mensagem no novo dashboard de histórico de mensagens (novo layout)
+$('#historicoMensagens .btn-warning').click(function() {
+    const mensagemIndex = $(this).closest('li').index();
+    
+    const mensagens = [
+        {
+            texto: "Atualização de Caso 1: O processo está em andamento."
+        },
+        {
+            texto: "Atualização de Caso 2: A audiência foi marcada para 15/10."
+        }
+    ];
+
+    // Preenche o modal com a mensagem correspondente
+    $('#modalMensagem').html(`Mensagem: ${mensagens[mensagemIndex].texto}`);
+    
+    // Exibe o modal
+    $('#responderModal').modal('show');
+});
+
+// Função para enviar a resposta (para ambos os dashboards)
+$('#enviarResposta').click(function() {
+    const resposta = $('#campoResposta').val();
+    
+    if (resposta.trim() === "") {
+        alert("Por favor, digite uma resposta antes de enviar.");
+        return;
+    }
+
+    // Aqui você pode adicionar a lógica para enviar a resposta via backend, por exemplo, uma requisição AJAX.
+
+    alert("Resposta enviada com sucesso: " + resposta);
+
+    // Limpa o campo de resposta e fecha o modal
+    $('#campoResposta').val('');
+    $('#responderModal').modal('hide');
+});
+
+// Script de logout
+document.getElementById('logoutButton').addEventListener('click', function () {
+    $.ajax({
+        url: '/auth/logout',  // Rota para o logout no backend
+        method: 'POST',       // Método POST para encerrar a sessão
+        success: function() {
+            // Redireciona o usuário para a página de login após o logout
+            window.location.href = '/login.html';
+        },
+        error: function() {
+            alert('Erro ao realizar logout. Tente novamente.');
+        }
+    });
 });
